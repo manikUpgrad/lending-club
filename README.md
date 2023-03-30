@@ -1,6 +1,14 @@
 # Project Name
 
-> Outline a brief description of your project.
+This company is the largest online loan marketplace, facilitating personal loans, business loans, and financing of
+medical procedures. Borrowers can easily access lower interest rate loans through a fast online interface.
+
+If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount
+of credit loss. Identification of such applicants using EDA is the aim of this case study.
+
+In other words, the company wants to understand the driving factors (or driver variables) behind loan default, i.e. the
+variables which are strong indicators of default. The company can utilise this knowledge for its portfolio and risk
+assessment.
 
 ## Table of Contents
 
@@ -34,7 +42,6 @@ data in a better way.
 - delinq_2yrs - The number of 30+ days past-due incidences of delinquency in the borrower's credit file for the past 2
   years
 - delinq_amnt - The past-due amount owed for the accounts on which the borrower is now delinquent.
-
 
 ### Income - Variables related to income and cash flow (Orange)
 
