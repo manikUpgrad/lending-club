@@ -43,7 +43,7 @@ data in a better way.
   years
 - delinq_amnt - The past-due amount owed for the accounts on which the borrower is now delinquent.
 
-### Income - Variables related to income and cash flow (Orange)
+### Income - Variables related to income and cash flow
 
 - avg_cur_bal - Average current balance of all accounts
 - open to buy - The difference between the credit limit assigned to a cardholder account and the present balance on the
@@ -51,18 +51,44 @@ data in a better way.
 - bc_util - Ratio of total current balance to high credit/credit limit for all bankcard accounts.
 - annual_inc - The self-reported annual income provided by the borrower during registration.
 - annual_inc_joint - The combined self-reported annual income provided by the co-borrowers during registration
+- dti - A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding
+  mortgage and the requested LC loan, divided by the borrower’s self-reported monthly income.
+- dti_joint (Calculate This) - A ratio calculated using the co-borrowers' total monthly payments on the total debt
+  obligations, excluding
+  mortgages and the requested LC loan, divided by the co-borrowers' combined self-reported monthly income
+- emp_length - Employment length in years. Possible values are between 0 and 10 where 0 means less than one year and 10
+  means ten or more years.
+- home_ownership - The home ownership status provided by the borrower during registration. Our values are: RENT, OWN,
+  MORTGAGE, OTHER.
+- verification_status - Indicates if income was verified by LC, not verified, or if the income source was verified
 
-### Application - Variables related to Loan Application (Purple)
+### Existing Loans Performance - Variables related to Loan Application
 
 - application_type - Indicates whether the loan is an individual application or a joint application with two
   co-borrowers
-
-### Existing Loans - Variable Related to Current Loads or Requested Loans (Blue)
-
-### Variables That Cannot be Use (Grey)
-
-- acc_open_past_24mths - The entire column is NA
-- all_util - The entire column is NA
+- grade - Loan grading is a classification system that involves assigning a quality score to a loan based on a
+  borrower's credit history, quality of the collateral, and the likelihood of repayment of the principal and interest.
+- sub_grade - LC assigned loan subgrade
+- loan_status - Current status of the loan
+- purpose - A category provided by the borrower for the loan request.
+- inq_last_6mths - The number of inquiries in past 6 months (excluding auto and mortgage inquiries)
+- open_acc - The number of open credit lines in the borrower's credit file.
+- pub_rec - Number of derogatory public records
+- pub_rec_bankruptcies - Number of public record bankruptcies
+- total_acc - The total number of credit lines currently in the borrower's credit file
+- out_prncp - Remaining outstanding principal for total amount funded
+- total_pymnt - Payments received to date for total amount funded
+- total_pymnt_inv - Payments received to date for portion of total amount funded by investors
+- total_rec_prncp - Principal received to date
+- total_rec_int - Interest received to date
+- total_rec_late_fee - Late fees received to date
+- last_pymnt_d - Last month payment was received
+- last_pymnt_amnt - Last total payment amount received
+- next_pymnt_d - Next scheduled payment date
+- last_credit_pull_d - The most recent month LC pulled credit for this loan. Sometimes these inquiries are referred to
+  as “credit pulls” because you or any financial institution is pulling information about you from the credit Bureaus
+  Files (Experian, Equifax, TransUnion – these are the three major credit bureaus from which the creditor or lenders
+  request for borrowers credit report).
 
 <!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
 
