@@ -1,118 +1,82 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
-highlighter: shiki
-# show line numbers in code blocks
-lineNumbers: false
-# some information about the slides, markdown enabled
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
 
-  Learn more at [Sli.dev](https://sli.dev)
+# try also 'default' to start simple
+
+theme: seriph
+background: https://images.unsplash.com/photo-1563089145-599997674d42
+
+# apply any windi css classes to the current slide
+
+class: 'text-center'
+
+# https://sli.dev/custom/highlighters.html
+
+highlighter: shiki
+
+# show line numbers in code blocks
+
+lineNumbers: true
+
+# some information about the slides, markdown enabled
+
+info: |
+
+## Slidev Starter Template
+
+Presentation on the Lending Club Case Study
+
 # persist drawings in exports and build
+
 drawings:
-  persist: false
+persist: false
+
 # page transition
+
 transition: slide-left
+
 # use UnoCSS
+
 css: unocss
 ---
 
-# Welcome to Slidev
+# The Lending Club Case Study
 
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+Welcome to the lending club case study presentation
 
 ---
-transition: fade-out
+layout: center
 ---
 
-# What is Slidev?
+# The Approach
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+While working on the data analysis for the Lending Club, I followed the following approach
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
+- 📝 **Identifying Variables** - Group and identify the variables that will help in risk analysis
+- 🛠 **Data Cleaning And Preparation** - Clean the available Data and prepare it for analysis
+- 🧑‍💻 **Univariate Analysis and Segmentation** - Conduct Univariate analysis and segmentation on the filtered Data
+- 🤹 **Bivariate Analysis** - See the impact of two variables combined on the overall risk
+- 🤹 **Derive Final Metrics** - Try and derive final metrics from the data and analyse high risk accounts
 
 ---
 transition: slide-up
 ---
 
-# Navigation
+# Default History
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+Variables that might depict a history of default
+|                          |                                                                                                                                  |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| acc_now_delinq           | The number of accounts on which the borrower is now delinquent.                                                                  |
+| chargeoff_within_12_mths | A charge-off or chargeoff is a declaration by a creditor that an amount of debt is unlikely to be collected.                     |
+| collection_recovery_fee  | A fee levied if you do not pay your EMIs, your account goes into default, and the bank/lender hasto take any action against you. |
+| delinq_2yrs              | The number of 30+ days past-due incidences of delinquency in the borrower's credit file for the past 2 years                     |
+| delinq_amnt              | The past-due amount owed for the accounts on which the borrower is now delinquent.                                               |
 
 <!-- https://sli.dev/guide/animations.html#click-animations -->
 <img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
+v-click
+class="absolute -bottom-9 -left-7 w-80 opacity-50"
+src="https://sli.dev/assets/arrow-bottom-left.svg"
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
@@ -165,10 +129,12 @@ function updateUser(id: number, update: User) {
 
 You can use Vue components directly inside your slides.
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your
+custom components is also super easy.
 
 ```html
-<Counter :count="10" />
+
+<Counter :count="10"/>
 ```
 
 <!-- ./components/Counter.vue -->
@@ -180,7 +146,8 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 <div>
 
 ```html
-<Tweet id="1390115482657726468" />
+
+<Tweet id="1390115482657726468"/>
 ```
 
 <Tweet id="1390115482657726468" scale="0.65" />
@@ -205,7 +172,8 @@ class: px-20
 
 # Themes
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for
+tools. Switching between themes by just **one edit** in your frontmatter:
 
 <div grid="~ cols-2 gap-2" m="-t-2">
 
@@ -239,11 +207,12 @@ preload: false
 Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
 
 ```html
+
 <div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
+        v-motion
+        :initial="{ x: -80 }"
+        :enter="{ x: 0 }">
+    Slidev
 </div>
 ```
 
@@ -321,7 +290,7 @@ $$
 \begin{array}{c}
 
 \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+= \frac{4\pi}{c}\vec{\mathbf{j}} \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
 
 \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
 
