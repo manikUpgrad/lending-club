@@ -1,16 +1,4 @@
-# Project Name
-
-This company is the largest online loan marketplace, facilitating personal loans, business loans, and financing of
-medical procedures. Borrowers can easily access lower interest rate loans through a fast online interface.
-
-If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount
-of credit loss. Identification of such applicants using EDA is the aim of this case study.
-
-In other words, the company wants to understand the driving factors (or driver variables) behind loan default, i.e. the
-variables which are strong indicators of default. The company can utilise this knowledge for its portfolio and risk
-assessment.
-
-## Table of Contents
+# Table of Contents
 
 * [General Info](#general-information)
 * [Data Analysis](#data-analysis)
@@ -20,12 +8,23 @@ assessment.
 
 <!-- You can include any other section that is pertinent to your problem -->
 
-## General Information
+## Problem Statement
 
-- Provide general information about your project here.
-- What is the background of your project?
-- What is the business probem that your project is trying to solve?
-- What is the dataset that is being used?
+Lending Club is a platform that facilitates personal loans for consumers by matching borrowers seeking loans with
+investors looking to lend money and earn a return. Its focus is on lending different types of loans to customers in
+urban areas. The company evaluates loan applications based on the applicant's profile to make loan approval decisions.
+
+As with other lending companies, providing loans to "risky" borrowers is the primary cause of financial loss, or credit
+loss. Credit loss is the amount of money that lenders lose when borrowers fail to repay or abscond with the money
+borrowed. In other words, defaulting borrowers are the ones who cause the most significant losses to lenders. Borrowers
+labeled as "charged-off" are considered defaulters in this case.
+
+The main objective is to minimize credit loss for the company. Two potential sources of credit loss are:
+
+1. Applicants who are likely to repay the loan, which can generate profits for the company through interest rates.
+   Rejecting such applicants can result in a loss of business.
+2. Applicants who are unlikely to repay the loan and may potentially default. Approving the loan for such applicants may
+   lead to a financial loss for the company.
 
 ## Data Analysis
 
