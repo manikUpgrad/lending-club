@@ -1,41 +1,21 @@
 ---
-
 # try also 'default' to start simple
-
 theme: seriph
+# random image from a curated Unsplash collection by Anthony
+# like them? see https://unsplash.com/collections/94734566/slidev
 background: https://images.unsplash.com/photo-1563089145-599997674d42
-
 # apply any windi css classes to the current slide
-
 class: 'text-center'
-
 # https://sli.dev/custom/highlighters.html
-
 highlighter: shiki
-
 # show line numbers in code blocks
-
-lineNumbers: true
-
-# some information about the slides, markdown enabled
-
-info: |
-
-## Slidev Starter Template
-
-Presentation on the Lending Club Case Study
-
+lineNumbers: false
 # persist drawings in exports and build
-
 drawings:
-persist: false
-
+  persist: false
 # page transition
-
 transition: slide-left
-
 # use UnoCSS
-
 css: unocss
 ---
 
@@ -49,330 +29,182 @@ layout: center
 
 # The Approach
 
-While working on the data analysis for the Lending Club, I followed the following approach
+While working on the data analysis for the Lending Club, I followed the
+following approach
 
-- 📝 **Identifying Variables** - Group and identify the variables that will help in risk analysis
-- 🛠 **Data Cleaning And Preparation** - Clean the available Data and prepare it for analysis
-- 🧑‍💻 **Univariate Analysis and Segmentation** - Conduct Univariate analysis and segmentation on the filtered Data
-- 🤹 **Bivariate Analysis** - See the impact of two variables combined on the overall risk
-- 🤹 **Derive Final Metrics** - Try and derive final metrics from the data and analyse high risk accounts
+- 📝 **Identifying Variables** - Group and identify the variables that will help
+  in risk analysis
+- 🛠 **Data Cleaning And Preparation** - Clean the available Data and prepare it
+  for analysis
+- 🀙 **Univariate Analysis and Segmentation** - Conduct Univariate analysis and
+  segmentation on the filtered Data
+- 🀚 **Bivariate Analysis** - See the impact of two variables combined on the
+  overall risk
+- 📈 **Derive Final Metrics** - Try and derive final metrics from the data and
+  analyse high risk accounts
+- ↔️ **Correlation Analysis** - Analyse the correlation between the variables
+- ✍️ **Recommendations** - Recommendations based on the analysis
 
 ---
 transition: slide-up
----
-
-# Default History
-
-Variables that might depict a history of default
-|                          |                                                                                                                                  |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| acc_now_delinq           | The number of accounts on which the borrower is now delinquent.                                                                  |
-| chargeoff_within_12_mths | A charge-off or chargeoff is a declaration by a creditor that an amount of debt is unlikely to be collected.                     |
-| collection_recovery_fee  | A fee levied if you do not pay your EMIs, your account goes into default, and the bank/lender hasto take any action against you. |
-| delinq_2yrs              | The number of 30+ days past-due incidences of delinquency in the borrower's credit file for the past 2 years                     |
-| delinq_amnt              | The past-due amount owed for the accounts on which the borrower is now delinquent.                                               |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-v-click
-class="absolute -bottom-9 -left-7 w-80 opacity-50"
-src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your
-custom components is also super easy.
-
-```html
-
-<Counter :count="10"/>
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-
-<Tweet id="1390115482657726468"/>
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for
-tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-
-<div
-        v-motion
-        :initial="{ x: -80 }"
-        :enter="{ x: 0 }">
-    Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}} \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
----
-
----
 layout: center
-class: text-center
 ---
 
-# Learn More
+# Data Cleaning and Manipulation
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+Aiming to clean and manipulate the data to finally reach a data form where we
+can work with the data. Will wilcude the following steps while cleaning and
+manipulating data.
+
+1. Find the number of columns which do not have any data.
+2. Drop unwanted and duplicate rows.
+3. Dropping text/description columns which will not contribute to overall
+   analysis
+4. Dropping column sub_grade as the current analysis will limit to Grade only
+5. Dropping all columns which refer to behavioural data of customer post loan
+   approval
+
+---
+transition: slide-up
+layout: center
+---
+
+# Data Cleaning and Manipulation
+
+6. Dropping columns which is unique id in nature. They dont contribute to loan
+   analysis
+7. Dropping all columns where all the values are NA
+8. Dropping all columns with all zero values
+9. Drop all columns who have constant values (ignoring NA value)
+10. Drop the column if the amount of empty values is more than 65%
+
+---
+transition: slide-up
+layout: center
+---
+
+# Data Conversion
+
+Since we have removed unwanted data from the dataset now we can focus on data
+conversion. During this process we will focus on the following:
+
+1. Converting columns to floats where needed.
+2. Converting required columns to integers if they can be converted and exist
+   as strings in dataset.
+3. Round off any values in the columns which have floating point values with
+   more than 2 decimal places.
+4. Convert the columns loan_amnt and funded_amnt as flot64
+
+---
+transition: slide-up
+layout: center
+---
+
+# Data Conversion
+
+5. Convert the term column into an integer from a string
+6. Convert int_rate to float by removing the "%" character
+7. Round off the values of key float fields to 2 decimal place
+8. Converting the loan_status to boolean column. "Fully-Paid is True and Charged
+   Off is False"
+9. Converting the column issue_d from string object to DateTime
+
+---
+transition: slide-up
+layout: center
+---
+
+# Univariate Analysis:
+
+### Customer Demographics:
+
+- The majority of loan applicants have an annual income between 0 to 40K.
+- The majority of the debt-to-income ratio falls within 0 to 20, with some
+  going up to 30.
+- The majority of applicants are either renting or have a mortgage.
+- The highest number of loan applications are for debt consolidation purposes.
+- California state has the highest number of loan applications.
+- Most loan applicants have no public record of bankruptcy.
+- The majority of customers have been employed for 10+ years or between 0-2
+  years.
+
+---
+transition: slide-up
+layout: center
+---
+
+# Univariate Analysis:
+
+### Loan Demographics:
+
+- The highest number of loan applications fall within the range of 5k to 10k.
+- The majority of interest rates are between 5% to 16%, with some going up to
+  22%.
+- Most installment amounts fall within the range of 20.
+- The majority of loan applications are for a term of 36 months.
+- Most loan application counts fall under the category of Grade B.
+
+---
+transition: slide-up
+layout: center
+---
+
+# Univariate Analysis:
+
+### Time-Based Analysis:
+
+- Loan application counts are increasing each year, with the highest volume of
+loan applications in Quarter 4 of every year.
+- The lowest loan applications are in Q1, possibly due to financial challenges,
+festive seasons, or debt consolidation at the end of the year.
+
+
+---
+transition: slide-up
+layout: center
+---
+
+# Univariate Analysis:
+
+### Inferences:
+
+- The customer demographic data indicates which segment of customers to 
+target for the highest volume of loans.
+- Further analysis is needed to understand why other categories are not as 
+  high as a few.
+- The LendingClub should be prepared for the highest volume of loans in Q4 
+  and target customers in other quarters to increase sales.
+
+---
+transition: slide-up
+layout: center
+---
+
+# Final Recommendations Based On Complete Process
+- Borrowers who take loans for a term of 60 months are more likely to default.
+- Borrowers with less than 1 year of employment have a higher risk on 
+  defaulting.
+- Borrowers with a "Verified" loan status who take high loan amounts with a 
+  60-month tenure have a higher risk of defaulting.
+- Borrowers who have "Rent" and "Mortgage" as their home_ownership have a 
+  higher probability of defaulting.
+- Borrowers who take loans for the purpose of debt consolidation are at a 
+  higher risk of defaulting.
+- Borrowers who take loans for the purpose of small business have a higher 
+  probability of defaulting.
+
+---
+transition: slide-up
+layout: center
+---
+
+# Final Recommendations Based On Complete Process
+- Borrowers with loan amount 15K and above is at the highest risk.
+- Borrowers who receive interest rates between 15% and higher are more likely 
+  to default.
+- Borrowers with lower grades, i.e., E,F,G, are at a higher risk of defaulting.
+- Borrowers from NV (Nevada) have a high risk of Charge Offs.
+- Borrowers having bankruptcy record are at high risk of Charge Offs
+- Borrowers with pub_rec_bankruptcies count of 2 and higher have even higher 
+  Charge Off ratio
+- Borrowers with income range of 0-40K have the highest risk of Charge Offs 
